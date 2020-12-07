@@ -98,8 +98,6 @@ class App extends Component {
 					<div className = "main-app-container">
 						
 						<div className ="scoreboard-container">
-							<div className="scoreboard-names">
-							
 							<Header title ="Scoreboard" totalPlayers = {this.state.players.length}
 											className = "scoreboard-header" />
 
@@ -110,10 +108,7 @@ class App extends Component {
 												removePlayer = {this.handleRemovePlayer}
 								/>
 							)}
-							</div>
-
 						</div>
-
 					</div>
 				);
 			}
