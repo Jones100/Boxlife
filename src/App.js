@@ -95,10 +95,13 @@ class App extends Component {
 			
 			render() {
 				return (
-					<div className = "main-container">
+					<div className = "main-app-container">
 						
-						<div className="scoreboard">
-							<Header title="Scoreboard" totalPlayers = {this.state.players.length} />
+						<div className ="scoreboard-container">
+							<div className="scoreboard-names">
+							
+							<Header title ="Scoreboard" totalPlayers = {this.state.players.length}
+											className = "scoreboard-header" />
 
 							{this.state.players.map(player =>
 								<Player name = {player.name}
@@ -107,6 +110,7 @@ class App extends Component {
 												removePlayer = {this.handleRemovePlayer}
 								/>
 							)}
+							</div>
 
 						</div>
 
