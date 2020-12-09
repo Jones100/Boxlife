@@ -98,8 +98,10 @@ class App extends Component {
 					<div className = "main-app-container">
 						
 						<div className ="scoreboard-container">
-							<Header title ="Scoreboard" totalPlayers = {this.state.players.length}
+							<div className ="header-container">
+								<Header title ="Scoreboard" totalPlayers = {this.state.players.length} 
 											className = "scoreboard-header" />
+							</div>
 
 							{this.state.players.map(player =>
 								<Player name = {player.name}
@@ -109,6 +111,7 @@ class App extends Component {
 								/>
 							)}
 						</div>
+
 					</div>
 				);
 			}
