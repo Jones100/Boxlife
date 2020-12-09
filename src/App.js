@@ -11,9 +11,9 @@ class App extends Component {
 
     const Header = (props) => {
       return (
-        <header>
-          <h1> {props.title} </h1>
-          <div className = "players"> 
+        <header className = "header">
+          <h1 className = "h1"> {props.title} </h1>
+          <div className = "total-players"> 
             Players : {props.totalPlayers}
           </div>
         </header>
@@ -99,8 +99,8 @@ class App extends Component {
 						
 						<div className ="scoreboard-container">
 							<div className ="header-container">
-								<Header title ="Scoreboard" totalPlayers = {this.state.players.length} 
-											className = "scoreboard-header" />
+								<Header title ="Scoreboard" 
+												totalPlayers = {this.state.players.length} />
 							</div>
 
 							{this.state.players.map(player =>
