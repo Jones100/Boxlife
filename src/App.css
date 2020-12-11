@@ -63,3 +63,15 @@
 .total-players {
 	display: flex;
 }
+
+.scoreboard-players {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+}
+
+.player {
+	display: flex;
+	flex-direction: row;
+}

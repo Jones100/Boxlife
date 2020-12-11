@@ -102,16 +102,16 @@ class App extends Component {
 								<Header title ="Scoreboard" 
 												totalPlayers = {this.state.players.length} />
 							</div>
-
-							{this.state.players.map(player =>
-								<Player name = {player.name}
-												id = {player.id}
-												key = {player.id.toString()}
-												removePlayer = {this.handleRemovePlayer}
-								/>
-							)}
+							<div className ="scoreboard-players">
+								{this.state.players.map(player =>
+									<Player name = {player.name}
+													id = {player.id}
+													key = {player.id.toString()}
+													removePlayer = {this.handleRemovePlayer}
+									/>
+								)}
+							</div>
 						</div>
-
 					</div>
 				);
 			}
