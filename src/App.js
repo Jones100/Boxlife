@@ -22,8 +22,8 @@ class App extends Component {
 
     const Player = (props) => {
       return (
-        <div className="player">
-          <div className="player-name">
+        <div className = "player">
+          <div className = "player-name">
 						<button onClick = { () => props.removePlayer(props.id)}> x </button>
             {props.name}
           </div>
@@ -54,10 +54,12 @@ class App extends Component {
 
 			render() {
 				return (
-					<div className="counter">
-						<button className="counter-action-decrement" onClick = {this.decrementScore}> -  </button>
-						<div className="counter-score"> {this.state.score} </div>
-						<button className="counter-action-increment" onClick = {this.incrementScore}> -  </button>
+					<div className="counter-container">
+						<div className="counter">
+							<button className="counter-action-decrement" onClick = {this.decrementScore}> -  </button>
+							<div className="counter-score"> {this.state.score} </div>
+							<button className="counter-action-increment" onClick = {this.incrementScore}> -  </button>
+						</div>
 					</div>
 				);
 			}
@@ -97,7 +99,7 @@ class App extends Component {
 				return (
 					<div className = "main-app-container">
 						
-						<div className ="scoreboard-container">
+						<div className = "scoreboard-container">
 							<div className ="header-container">
 								<Header title ="Scoreboard" 
 												totalPlayers = {this.state.players.length} />
