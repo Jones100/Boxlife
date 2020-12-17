@@ -35,10 +35,10 @@
 .scoreboard-container {
 	display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    width: 93%;
     align-items: center;
-    justify-content: center;
+    height: 93%;
+    justify-content: space-around;
 }
 
 .header-container {
@@ -91,18 +91,33 @@
     border-width: 2px;
 }
 
+.player-button-container {
+	display: flex;
+    flex-direction: row;
+    width: 45%;
+    justify-content: center;
+}
+
 .player {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	justify-content: space-evenly;
+	justify-content: space-around;
 }
 
-.player-button-container {
+.player-name {
 	display: flex;
 	flex-direction: row;
-	width: 15%;
-    justify-content: space-between;
+	width: 50%;
+	justify-content: flex-start;
+}
+
+.button-container {
+	display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: flex-end;
+    margin-right: 10%;
 }
 
 .counter-container {
