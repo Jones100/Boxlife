@@ -23,10 +23,17 @@ class App extends Component {
     const Player = (props) => {
       return (
         <div className = "player">
-          <div className = "player-name">
-						<button onClick = { () => props.removePlayer(props.id)}> x </button>
-            {props.name}
-          </div>
+					<div className = "player-button-container">
+						<div className = "player-name">
+					  		{props.name}
+						</div> 
+						<div className="button-container">
+							<button onClick={() => props.removePlayer(props.id)}
+								className="delete-button">
+								x
+							</button>
+						</div>
+					</div>
 
           <Counter />
         

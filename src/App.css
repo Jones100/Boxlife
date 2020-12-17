@@ -87,6 +87,21 @@
 	justify-content: space-evenly;
 }
 
+.player-button-container {
+	display: flex;
+    flex-direction: row;
+}
+
+.player-name {
+	display: flex;
+    flex-direction: row;
+}
+
+.delete-button {
+	display: flex;
+    flex-direction: row;
+}
+
 .counter-container {
 	display: flex;
     flex-direction: row;
