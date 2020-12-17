@@ -94,24 +94,16 @@
     justify-content: space-between;
 }
 
-.player-name {
-	display: flex;
-}
-
-.button-container {
-	display: flex;
-}
-
-.delete-button {
-	display: flex;
-}
-
 .counter-container {
 	display: flex;
-    flex-direction: row;
+	flex-direction: row;
+	width: 5%;
+    justify-content: space-between;
 }
 
 .counter {
 	display: flex;
-    flex-direction: row;
+	flex-direction: row;
+	width: 100%;
+    justify-content: space-between;
 }
