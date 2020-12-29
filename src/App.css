@@ -89,8 +89,6 @@
     flex-direction: column;
     width: 50%;
     height: 85%;
-    align-items: stretch;
-    justify-content: stretch;
     border-style: solid;
     border-width: 2px;
 }
