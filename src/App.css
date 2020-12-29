@@ -76,8 +76,8 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
-    height: 60%;
-	justify-content: space-evenly;
+    height: 90%;
+	justify-content: space-around;
 }
 
 .scoreboard-border {
