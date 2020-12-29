@@ -45,38 +45,42 @@
 	display: flex;
     flex-direction: column;
     width: 100%;
-    height: 15%;
+    height: 20%;
     align-items: center;
-    justify-content: center;
+    justify-content: center
 }
 
 .header {
     display: flex;
     flex-direction: column;
+    width: 100%;
     height: 100%;
     justify-content: space-evenly;
-    width: 100%;
 }
 
 .h1 {
 	display: flex;
     margin: 0;
     flex-direction: column;
+    height: 50%;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .total-players {
-	display: flex;
+    display: flex;
     flex-direction: column;
+    height: 35%;
     align-items: center;
+    justify-content: center;
 }
 
 .scoreboard-players {
 	display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: center;
     height: 90%;
+    align-items: center;
 	justify-content: space-around;
 }
 
