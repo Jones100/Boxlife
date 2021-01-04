@@ -75,13 +75,20 @@
     justify-content: center;
 }
 
+.scoreboard-players-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
 .scoreboard-players {
 	display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 85%;
     height: 90%;
     align-items: center;
-	justify-content: space-around;
+    justify-content: space-around;
 }
 
 .scoreboard-border {
@@ -96,30 +103,30 @@
 .player-button-container {
 	display: flex;
     flex-direction: row;
-    width: 45%;
-    justify-content: center;
+    width: 65%;
+    justify-content: flex-start
 }
 
 .player {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 .player-name {
 	display: flex;
 	flex-direction: row;
-	width: 50%;
+	width: 80%;
 	justify-content: flex-start;
 }
 
 .button-container {
-	display: flex;
+    display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 20%;
     justify-content: flex-end;
-    margin-right: 10%;
+    margin-right: 5%;
 }
 
 .counter-container {

@@ -108,18 +108,22 @@ class App extends Component {
 						
 						<div className = "scoreboard-container">
 							<div className = "scoreboard-border">
-								<div className ="header-container">
-									<Header title ="Scoreboard" 
+								
+								<div className = "header-container">
+									<Header title = "Scoreboard" 
 													totalPlayers = {this.state.players.length} />
 								</div>
-								<div className ="scoreboard-players">
-									{this.state.players.map(player =>
-										<Player name = {player.name}
-														id = {player.id}
-														key = {player.id.toString()}
-														removePlayer = {this.handleRemovePlayer}
-										/>
-									)}
+
+								<div className = "scoreboard-players-container">
+									<div className ="scoreboard-players">
+										{this.state.players.map(player =>
+											<Player name = {player.name}
+													id = {player.id}
+													key = {player.id.toString()}
+													removePlayer = {this.handleRemovePlayer}
+											/>
+										)}
+									</div>
 								</div>
 							</div>
 						</div>
