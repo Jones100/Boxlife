@@ -18,17 +18,24 @@ class App extends Component {
           </div>
         </header>
       );
-    }
+		}
 
     const Player = (props) => {
       return (
         <div className = "player">
 					<div className = "player-button-container">
 						<div className="button-container">
-							<button onClick={() => props.removePlayer(props.id)}
+							
+							{/* <button onClick={this.sureRemovePlayer}> click </button> */}
+
+							<button onClick = {props.sureRemovePlayer}
+									// onClick={() => props.removePlayer(props.id)}
 								className="delete-button">
 								x
 							</button>
+
+
+
 						</div>
 						<div className = "player-name">
 					  		{props.name}
@@ -43,9 +50,9 @@ class App extends Component {
 
 		class Counter extends React.Component { 
 			state = {
-				score: 0
+				score: 0,
 			}
-			
+
 			decrementScore = () => {
 				this.setState(prevState => ({
 					score: prevState.score -1
@@ -57,7 +64,6 @@ class App extends Component {
 					score: prevState.score +1
 				}));
 			}
-
 
 			render() {
 				return (
@@ -91,7 +97,8 @@ class App extends Component {
 						name: "Triple G",
 						id: 4
 					},
-				]
+				],
+
 			}
 
 			handleRemovePlayer = (id) => {
@@ -101,9 +108,14 @@ class App extends Component {
 					};
 				});
 			}
+
+			sureRemovePlayer = () => {
+				console.log('Are you sure you want to remove this player?')
+			}
 			
 			render() {
 				return (
+					
 					<div className = "main-app-container">
 						
 						<div className = "scoreboard-container">
@@ -121,6 +133,7 @@ class App extends Component {
 													id = {player.id}
 													key = {player.id.toString()}
 													removePlayer = {this.handleRemovePlayer}
+													sureRemovePlayer = {this.sureRemovePlayer}
 											/>
 										)}
 									</div>
