@@ -25,17 +25,11 @@ class App extends Component {
         <div className = "player">
 					<div className = "player-button-container">
 						<div className="button-container">
-							
-							{/* <button onClick={this.sureRemovePlayer}> click </button> */}
-
-							<button onClick = {props.sureRemovePlayer}
-									// onClick={() => props.removePlayer(props.id)}
+							<button
+								// onClick={() => props.removePlayer(props.id)}
 								className="delete-button">
 								x
 							</button>
-
-
-
 						</div>
 						<div className = "player-name">
 					  		{props.name}
@@ -43,6 +37,8 @@ class App extends Component {
 					</div>
 
           <Counter />
+
+					<DeletePlayer />
         
         </div>
       );
@@ -78,6 +74,43 @@ class App extends Component {
 			}
 		}
 
+		// class App extends Component {
+		// 	state = {
+		// 		showMessage: false
+		// 	}
+		// 	onButtonClickHandler = () => {
+		// 		this.setState({ showMessage: true });
+		// 	};
+
+		// 	render() {
+		// 		return (<div className="App">
+		// 			{this.state.showMessage && <p>Hi</p>}
+		// 			<button onClick={this.onButtonClickHandler}>Enter</button>
+		// 		</div>);
+
+		// 	}
+		// }
+
+		class DeletePlayer extends React.Component {
+			state = {
+				showMessage: false
+			}
+
+			sureRemovePlayer = () => {
+				this.setState({ showMessage: true });
+				// console.log('Are you sure you want to remove this player?')
+			};
+			
+			render() {
+				return (
+					<div className="sure-remove-container">
+						{this.state.showMessage && <div> Are you sure you want to remove this player? </div>}
+						<button onClick = {this.sureRemovePlayer}> Enter </button>
+					</div>
+				);
+			}
+		}
+
     class App extends React.Component {
 			state = {
 				players: [
@@ -98,7 +131,6 @@ class App extends Component {
 						id: 4
 					},
 				],
-
 			}
 
 			handleRemovePlayer = (id) => {
@@ -109,10 +141,6 @@ class App extends Component {
 				});
 			}
 
-			sureRemovePlayer = () => {
-				console.log('Are you sure you want to remove this player?')
-			}
-			
 			render() {
 				return (
 					
@@ -130,10 +158,10 @@ class App extends Component {
 									<div className ="scoreboard-players">
 										{this.state.players.map(player =>
 											<Player name = {player.name}
-													id = {player.id}
-													key = {player.id.toString()}
-													removePlayer = {this.handleRemovePlayer}
-													sureRemovePlayer = {this.sureRemovePlayer}
+															id = {player.id}
+															key = {player.id.toString()}
+															removePlayer = {this.handleRemovePlayer}
+															// sureRemovePlayer = {this.sureRemovePlayer}
 											/>
 										)}
 									</div>
