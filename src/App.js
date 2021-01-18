@@ -25,11 +25,8 @@ class App extends Component {
         <div className = "player">
 					<div className = "player-button-container">
 						<div className="button-container">
-							<button
-								// onClick={() => props.removePlayer(props.id)}
-								className="delete-button">
-								x
-							</button>
+							<DeletePlayer />
+						{/* onClick={() => props.removePlayer(props.id)} */}
 						</div>
 						<div className = "player-name">
 					  		{props.name}
@@ -37,9 +34,6 @@ class App extends Component {
 					</div>
 
           <Counter />
-
-					<DeletePlayer />
-        
         </div>
       );
     }
@@ -73,24 +67,7 @@ class App extends Component {
 				);
 			}
 		}
-
-		// class App extends Component {
-		// 	state = {
-		// 		showMessage: false
-		// 	}
-		// 	onButtonClickHandler = () => {
-		// 		this.setState({ showMessage: true });
-		// 	};
-
-		// 	render() {
-		// 		return (<div className="App">
-		// 			{this.state.showMessage && <p>Hi</p>}
-		// 			<button onClick={this.onButtonClickHandler}>Enter</button>
-		// 		</div>);
-
-		// 	}
-		// }
-
+		
 		class DeletePlayer extends React.Component {
 			state = {
 				showMessage: false
@@ -98,14 +75,13 @@ class App extends Component {
 
 			sureRemovePlayer = () => {
 				this.setState({ showMessage: true });
-				// console.log('Are you sure you want to remove this player?')
 			};
 			
 			render() {
 				return (
 					<div className="sure-remove-container">
 						{this.state.showMessage && <div> Are you sure you want to remove this player? </div>}
-						<button onClick = {this.sureRemovePlayer}> Enter </button>
+						<button onClick = {this.sureRemovePlayer} className = "delete-button"> x </button>
 					</div>
 				);
 			}
