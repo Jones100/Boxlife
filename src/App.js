@@ -67,7 +67,7 @@ class App extends Component {
 				);
 			}
 		}
-		
+			
 		class DeletePlayer extends React.Component {
 			state = {
 				showMessage: false
@@ -79,12 +79,24 @@ class App extends Component {
 			
 			render() {
 				return (
-					<div className="sure-remove-container">
-						{this.state.showMessage && <div> Are you sure you want to remove this player? </div>}
+					<div className="delete-button-container">
+						{this.state.showMessage && <QuestionsRemovePlayer />}
 						<button onClick = {this.sureRemovePlayer} className = "delete-button"> x </button>
 					</div>
 				);
 			}
+		}
+
+		class QuestionsRemovePlayer extends React.Component {
+			state = {}
+				render() {
+					return (
+						<div className = "questions-container">
+							<div> Are you sure you want to remove this player? </div>
+							<div> Yes </div> <div> No </div>
+						</div>
+					); 
+				}
 		}
 
     class App extends React.Component {
@@ -137,7 +149,7 @@ class App extends Component {
 															id = {player.id}
 															key = {player.id.toString()}
 															removePlayer = {this.handleRemovePlayer}
-															// sureRemovePlayer = {this.sureRemovePlayer}
+															questionsRemovePlayer = {this.questionsRemovePlayer}
 											/>
 										)}
 									</div>
