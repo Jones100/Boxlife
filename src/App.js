@@ -25,7 +25,7 @@ class App extends Component {
         <div className = "player">
 					<div className = "player-button-container">
 						<div className="button-container">
-							<DeletePlayer />
+							<SureRemovePlayer />
 						{/* onClick={() => props.removePlayer(props.id)} */}
 						</div>
 						<div className = "player-name">
@@ -68,26 +68,26 @@ class App extends Component {
 			}
 		}
 			
-		class DeletePlayer extends React.Component {
+		class SureRemovePlayer extends React.Component {
 			state = {
 				showMessage: false
 			}
 
-			sureRemovePlayer = () => {
+			toggleRemovePlayer = () => {
 				this.setState({ showMessage: true });
 			};
 			
 			render() {
 				return (
 					<div className="delete-button-container">
-						{this.state.showMessage && <QuestionsRemovePlayer />}
-						<button onClick = {this.sureRemovePlayer} className = "delete-button"> x </button>
+						{this.state.showMessage && <QuestionRemovePlayer />}
+						<button onClick = {this.toggleRemovePlayer} className = "delete-button"> x </button>
 					</div>
 				);
 			}
 		}
 
-		class QuestionsRemovePlayer extends React.Component {
+		class QuestionRemovePlayer extends React.Component {
 			state = {}
 				render() {
 					return (
@@ -149,7 +149,6 @@ class App extends Component {
 															id = {player.id}
 															key = {player.id.toString()}
 															removePlayer = {this.handleRemovePlayer}
-															questionsRemovePlayer = {this.questionsRemovePlayer}
 											/>
 										)}
 									</div>
