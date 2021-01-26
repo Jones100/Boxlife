@@ -38,6 +38,16 @@ class App extends Component {
       );
     }
 
+    const PlayerProfile = (props) => {
+      return (
+				<div className = "player-profile-container">
+					<div className = "player-nickname"> Nickname : </div>
+					<div className = "player-strategy"> Boxing Strategy :  </div>
+					<div className = "player-personality"> Personality : </div>
+				</div>
+      );
+    }
+
 		class Counter extends React.Component { 
 			state = {
 				score: 0,
@@ -93,7 +103,7 @@ class App extends Component {
 					return (
 						<div className = "questions-container">
 							<div> Are you sure you want to remove this player? </div>
-							<button onClick={this.handleRemovePlayer}> Yes </button> 
+							<button onClick = {this.removePlayer}> Yes </button> 
 							<button> No </button>
 						</div>
 					); 
