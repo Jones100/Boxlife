@@ -93,7 +93,8 @@ class App extends Component {
 					return (
 						<div className = "questions-container">
 							<div> Are you sure you want to remove this player? </div>
-							<div> Yes </div> <div> No </div>
+							<button onClick={this.handleRemovePlayer}> Yes </button> 
+							<button> No </button>
 						</div>
 					); 
 				}
