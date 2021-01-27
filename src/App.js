@@ -38,16 +38,22 @@ class App extends Component {
       );
     }
 
-    const PlayerProfile = (props) => {
-      return (
-				<div className = "player-profile-container">
-					<div className = "player-nickname"> Nickname : </div>
-					<div className = "player-strategy"> Boxing Strategy :  </div>
-					<div className = "player-personality"> Personality : </div>
-				</div>
-      );
-    }
+    class PlayerProfile extends React.Component {
+			state = {
 
+			}
+
+			render() {
+				return (
+					<div className = "player-profile-container">
+						<div className = "player-nickname"> Nickname : </div>
+						<div className = "player-strategy"> Boxing Strategy :  </div>
+						<div className = "player-personality"> Personality : </div>
+					</div>
+				);
+			}
+		}
+			
 		class Counter extends React.Component { 
 			state = {
 				score: 0,
@@ -114,22 +120,22 @@ class App extends Component {
 			state = {
 				players: [
 					{
-						name: "Iron Mike",
-						id: 1
+						name: "Mike Tyson",
+						id: 1,
 					},
 					{
-						name: "Real Deal Holyfield",
-						id: 2
+						name: "Evander Holyfield",
+						id: 2,
 					},
 					{
-						name: "Razor Ruddock",
-						id: 3
+						name: "Ray Robinson",
+						id: 3,
 					},
 					{
-						name: "Triple G",
-						id: 4
-					},
-				],
+						name: "Genady Golovkin",
+						id: 4,
+					}
+				]
 			}
 
 			handleRemovePlayer = (id) => {
