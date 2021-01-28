@@ -28,32 +28,92 @@ class App extends Component {
 							<SureRemovePlayer />
 						{/* onClick={() => props.removePlayer(props.id)} */}
 						</div>
-						<div className = "player-name">
-					  		{props.name}
+						<div className="player-name" >
+					  	{props.name}
 						</div> 
 					</div>
-
           <Counter />
+
+
+					<HoverExample />
         </div>
       );
     }
 
-    class PlayerProfile extends React.Component {
-			state = {
 
+		class HoverExample extends Component {
+			constructor(props) {
+				super(props);
+				this.SetStateMouseHover = this.SetStateMouseHover.bind(this);
+				this.state = {
+					isHovering: false,
+				};
+			}
+
+			SetStateMouseHover() {
+				this.setState(this.toggleHoverState);
+			}
+
+			toggleHoverState(state) {
+				return {
+					isHovering: !state.isHovering,
+				};
 			}
 
 			render() {
 				return (
-					<div className = "player-profile-container">
-						<div className = "player-nickname"> Nickname : </div>
-						<div className = "player-strategy"> Boxing Strategy :  </div>
-						<div className = "player-personality"> Personality : </div>
+					<div>
+						<div className = "hover-div"
+							onMouseEnter={this.SetStateMouseHover}
+							onMouseLeave={this.SetStateMouseHover}
+						>
+							Hover Me
+        </div>
+						{
+							this.state.isHovering &&
+							<div className = "hover-div-2">
+								Hovering right meow! 🐱
+          </div>
+						}
 					</div>
 				);
 			}
 		}
-			
+
+
+
+
+
+		// class PlayerProfile extends React.Component {
+		// 	state = {
+
+		// 	}
+
+		// 	playerInfo = () => {
+
+		// 	}
+
+		// 	let userDatabase = {
+		// 	"Meredith35": { sex: "male", seeking: "female", image: "meredith.jpg",},
+		// 	"Brady9": { sex: "male", seeking: "female", image: "brady.jpg"},
+
+
+		// };
+
+		// 	render() {
+		// 		return (
+		// 			<div className = "player-profile-container">
+		// 				<div className = "player-nickname"> Nickname : </div>
+		// 				<div className = "player-strategy"> Boxing Strategy :  </div>
+		// 				<div className = "player-personality"> Personality : </div>
+		// 			</div>
+		// 		);
+		// 	}
+		// }
+
+
+		
+									
 		class Counter extends React.Component { 
 			state = {
 				score: 0,
