@@ -28,33 +28,29 @@ class App extends Component {
 							<SureRemovePlayer />
 						{/* onClick={() => props.removePlayer(props.id)} */}
 						</div>
+
+						<HoverExample />
+
 						<div className="player-name" >
 					  	{props.name}
 						</div> 
 					</div>
           <Counter />
-
-
-					<HoverExample />
         </div>
       );
     }
 
 
 		class HoverExample extends Component {
-			constructor(props) {
-				super(props);
-				this.SetStateMouseHover = this.SetStateMouseHover.bind(this);
-				this.state = {
-					isHovering: false,
-				};
-			}
+			state = {
+				isHovering: false,
+			};
 
-			SetStateMouseHover() {
+			SetStateMouseHover = () => {
 				this.setState(this.toggleHoverState);
 			}
 
-			toggleHoverState(state) {
+			toggleHoverState = (state) => {
 				return {
 					isHovering: !state.isHovering,
 				};
@@ -79,10 +75,6 @@ class App extends Component {
 				);
 			}
 		}
-
-
-
-
 
 		// class PlayerProfile extends React.Component {
 		// 	state = {
