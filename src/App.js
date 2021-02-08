@@ -1,4 +1,7 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
+import Header from "./Header";
+import Player from "./Player";
+import Counter from "./Counter";
 import "./App.css";
 
 class App extends Component {
@@ -9,185 +12,51 @@ class App extends Component {
   
   render() {
 
-    const Header = (props) => {
-      return (
-        <header className = "header">
-          <h1 className = "h1"> {props.title} </h1>
-          <div className = "total-players"> 
-            Players : {props.totalPlayers}
-          </div>
-        </header>
-      );
-		}
-
-    const Player = (props) => {
-      return (
-        <div className = "player">
-					<div className = "player-button-container">
-						<div className="button-container">
-							<SureRemovePlayer />
-						{/* onClick={() => props.removePlayer(props.id)} */}
-						</div>
-
-						<HoverExample />
-
-						<div className="player-name" >
-					  	{props.name}
-						</div> 
-					</div>
-          <Counter />
-        </div>
-      );
-    }
-
-
-		class HoverExample extends Component {
-			state = {
-				isHovering: false,
-			};
-
-			SetStateMouseHover = () => {
-				this.setState(this.toggleHoverState);
-			}
-
-			toggleHoverState = (state) => {
-				return {
-					isHovering: !state.isHovering,
-				};
-			}
-
-			render() {
-				return (
-					<div>
-						<div className = "hover-div"
-							onMouseEnter={this.SetStateMouseHover}
-							onMouseLeave={this.SetStateMouseHover}
-						>
-							Hover Me
-        </div>
-						{
-							this.state.isHovering &&
-							<div className = "hover-div-2">
-								Hovering right meow! 🐱
-          </div>
-						}
-					</div>
-				);
-			}
-		}
-
-		// class PlayerProfile extends React.Component {
-		// 	state = {
-
-		// 	}
-
-		// 	playerInfo = () => {
-
-		// 	}
-
-		// 	let userDatabase = {
-		// 	"Meredith35": { sex: "male", seeking: "female", image: "meredith.jpg",},
-		// 	"Brady9": { sex: "male", seeking: "female", image: "brady.jpg"},
-
-
-		// };
-
-		// 	render() {
-		// 		return (
 		// 			<div className = "player-profile-container">
 		// 				<div className = "player-nickname"> Nickname : </div>
 		// 				<div className = "player-strategy"> Boxing Strategy :  </div>
 		// 				<div className = "player-personality"> Personality : </div>
 		// 			</div>
-		// 		);
-		// 	}
-		// }
-
 
 		
-									
-		class Counter extends React.Component { 
-			state = {
-				score: 0,
-			}
-
-			decrementScore = () => {
-				this.setState(prevState => ({
-					score: prevState.score -1
-				}));
-			}
-
-			incrementScore = () => {
-				this.setState(prevState => ({
-					score: prevState.score +1
-				}));
-			}
-
-			render() {
-				return (
-					<div className="counter-container">
-						<div className="counter">
-							<button className="counter-action-decrement" onClick = {this.decrementScore}> -  </button>
-							<div className="counter-score"> {this.state.score} </div>
-							<button className="counter-action-increment" onClick = {this.incrementScore}> -  </button>
-						</div>
-					</div>
-				);
-			}
-		}
-			
-		class SureRemovePlayer extends React.Component {
-			state = {
-				showMessage: false
-			}
-
-			toggleRemovePlayer = () => {
-				this.setState({ showMessage: true });
-			};
-			
-			render() {
-				return (
-					<div className="delete-button-container">
-						{this.state.showMessage && <QuestionRemovePlayer />}
-						<button onClick = {this.toggleRemovePlayer} className = "delete-button"> x </button>
-					</div>
-				);
-			}
-		}
-
-		class QuestionRemovePlayer extends React.Component {
-			state = {}
-				render() {
-					return (
-						<div className = "questions-container">
-							<div> Are you sure you want to remove this player? </div>
-							<button onClick = {this.removePlayer}> Yes </button> 
-							<button> No </button>
-						</div>
-					); 
-				}
-		}
-
     class App extends React.Component {
 			state = {
 				players: [
 					{
 						name: "Mike Tyson",
 						id: 1,
+						score: 0,
+						hoverMessage: "Heyyy"
 					},
 					{
 						name: "Evander Holyfield",
 						id: 2,
+						score: 0,
+						hoverMessage: "Heyyy"
 					},
 					{
 						name: "Ray Robinson",
 						id: 3,
+						score: 0,
+						hoverMessage: "Heyyy"
 					},
 					{
 						name: "Genady Golovkin",
 						id: 4,
+						score: 0,
+						hoverMessage: "Heyyy"
 					}
-				]
+				],
+			}
+
+			// The below parameter 'change' signifies the amount the score changes by. 
+			// This can be named anything
+
+			handleScoreChange = (index, change) => {
+				// this.setState(prevState => ({
+				// 	score: prevState.score 
+				// }));
+				console.log('index: ' + index, 'change: ' + change);
 			}
 
 			handleRemovePlayer = (id) => {
@@ -213,10 +82,13 @@ class App extends Component {
 
 								<div className = "scoreboard-players-container">
 									<div className ="scoreboard-players">
-										{this.state.players.map(player =>
+										{this.state.players.map((player, index) =>
 											<Player name = {player.name}
+														  score = {player.score}
+															index = {index}
 															id = {player.id}
 															key = {player.id.toString()}
+															changeScore = {this.handleScoreChange}
 															removePlayer = {this.handleRemovePlayer}
 											/>
 										)}
