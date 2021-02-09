@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Header from "./Header";
 import Player from "./Player";
 import Counter from "./Counter";
+import AddPlayerForm from "./AddPlayerForm";
 import "./App.css";
 
 class App extends Component {
@@ -53,10 +54,10 @@ class App extends Component {
 			// This can be named anything
 
 			handleScoreChange = (index, change) => {
-				// this.setState(prevState => ({
-				// 	score: prevState.score 
-				// }));
-				console.log('index: ' + index, 'change: ' + change);
+				this.setState(prevState => ({
+					score: prevState.players[index].score += change 
+				}));
+				console.log(change)
 			}
 
 			handleRemovePlayer = (id) => {
@@ -77,7 +78,8 @@ class App extends Component {
 								
 								<div className = "header-container">
 									<Header title = "Scoreboard" 
-													totalPlayers = {this.state.players.length} />
+													players = {this.state.players} 
+										/>
 								</div>
 
 								<div className = "scoreboard-players-container">
@@ -92,6 +94,7 @@ class App extends Component {
 															removePlayer = {this.handleRemovePlayer}
 											/>
 										)}
+										<AddPlayerForm />
 									</div>
 								</div>
 							</div>
