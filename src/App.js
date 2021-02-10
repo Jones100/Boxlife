@@ -66,7 +66,7 @@ class App extends Component {
 
 			handleAddPlayer = (name) => {
 				console.log(...this.state.players);
-				this.setState(porevState => {
+				this.setState(prevState => {
 					return {
 						players: [
 							...this.state.players,
