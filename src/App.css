@@ -154,3 +154,11 @@
 	width: 40%;
     justify-content: space-between;
 }
+
+
+
+
+.stopwatch {
+    margin: 0px;
+    /* delete margin-top */
+}
