@@ -61,11 +61,11 @@ class App extends Component {
 				this.setState(prevState => ({
 					score: prevState.players[index].score += change 
 				}));
-				console.log(change)
+				// console.log(change)
 			}
 
 			handleAddPlayer = (name) => {
-				console.log(...this.state.players);
+				// console.log(...this.state.players);
 				this.setState(prevState => {
 					return {
 						players: [
