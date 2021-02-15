@@ -97,8 +97,7 @@ class App extends Component {
 							<div className = "scoreboard-border">
 								
 								<div className = "header-container">
-									<Header title = "Scoreboard" 
-													players = {this.state.players} 
+									<Header players = {this.state.players} 
 										/>
 								</div>
 
@@ -106,12 +105,12 @@ class App extends Component {
 									<div className ="scoreboard-players">
 										{this.state.players.map((player, index) =>
 											<Player name = {player.name}
-														  score = {player.score}
-															index = {index}
-															id = {player.id}
-															key = {player.id.toString()}
-															changeScore = {this.handleScoreChange}
-															removePlayer = {this.handleRemovePlayer}
+													score = {player.score}
+													index = {index}
+													id = {player.id}
+													key = {player.id.toString()}
+													changeScore = {this.handleScoreChange}
+													removePlayer = {this.handleRemovePlayer}
 											/>
 										)}
 										<AddPlayerForm addPlayer = {this.handleAddPlayer} />
