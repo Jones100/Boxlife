@@ -2,12 +2,12 @@ import React, {Component} from "react";
 import Stats from "./Stats";
 import Stopwatch from "./Stopwatch";
 
-const Header = (props) => {
+const Header = ({players, title}) => {
 	return (
 		<header className="header">
 			{/* <div className="total-players"> */}
-			<Stats players = {props.players} />
-			<h1 className="h1"> {props.title} </h1>
+			<Stats players = {players} />
+			<h1 className="h1"> {title} </h1>
 			{/* </div> */}
 			<Stopwatch />
 		</header>

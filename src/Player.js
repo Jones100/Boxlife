@@ -5,7 +5,18 @@ import {HandleHover} from "./HandleHover.js";
 
 class Player extends PureComponent {
 	render() {
-		console.log(this.props.name + ' rendered');
+		const {
+			name, 
+			id,
+			index, 
+			score,
+			changeScore,
+			SetStateHover,
+			// removePlayer,
+		} = this.props;
+
+		console.log(name + ' rendered');
+		
 		return (
 			<div className="player">
 				<div className="player-button-container">
@@ -15,17 +26,17 @@ class Player extends PureComponent {
 					</div>
 
 					<div className="player-name"
-							onMouseEnter={this.props.SetStateHover}
-							onMouseLeave={this.props.SetStateHover}
+							onMouseEnter={SetStateHover}
+							onMouseLeave={SetStateHover}
 					>
 							<HandleHover>
-									{this.props.name}
+									{name}
 							</HandleHover>
 					</div>
 				</div>
-				<Counter score = {this.props.score} 
-									index = {this.props.index}
-									changeScore = {this.props.changeScore}
+				<Counter score = {score} 
+									index = {index}
+									changeScore = {changeScore}
 				/>
 			</div>
 		);
