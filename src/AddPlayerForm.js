@@ -17,18 +17,15 @@ class AddPlayerForm extends Component {
 
 	render() {
 		const {
-			value,
-			handleSubmit,
-			handleValueChange
-
-		} = this.props;
+			value
+		} = this.state;
 
 		return (
-			<form onSubmit = {handleSubmit}>
+			<form onSubmit = {this.handleSubmit}>
 				<input
 					type = "text"
 					value = {value}
-					onChange = {handleValueChange}
+					onChange = {this.handleValueChange}
 					placeholder = "Enter a players name"
 				/>
 
