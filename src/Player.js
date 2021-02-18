@@ -2,7 +2,7 @@ import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import Counter from "./Counter";
 import {SureRemovePlayer} from "./SureRemovePlayer.js";
-import {HandleHover} from "./HandleHover.js";
+// import {HandleHover} from "./HandleHover.js";
 
 class Player extends PureComponent {
 
@@ -12,7 +12,9 @@ class Player extends PureComponent {
 		id: PropTypes.number.isRequired,
 		index: PropTypes.number.isRequired,
 		changeScore: PropTypes.func.isRequired,
-		removePlayer: PropTypes.func.isRequired
+		removePlayer: PropTypes.func.isRequired,
+		hover: PropTypes.func.isRequired,
+		// isHovering: PropTypes.bool.isRequired
 	};
 
 	render() {
@@ -22,11 +24,13 @@ class Player extends PureComponent {
 			index, 
 			score,
 			changeScore,
-			SetStateHover,
+			hover,
+			isHovering
+			// setStateHover,
 			// removePlayer,
 		} = this.props;
 
-		console.log(name + ' rendered');
+		// console.log(name + ' rendered');
 		
 		return (
 			<div className="player">
@@ -37,13 +41,21 @@ class Player extends PureComponent {
 					</div>
 
 					<div className="player-name"
-							onMouseEnter={SetStateHover}
-							onMouseLeave={SetStateHover}
+							onMouseEnter={hover}
+							onMouseLeave={hover}
 					>
-							<HandleHover>
+							{/* <HandleHover> */}
 								{name}
-							</HandleHover>
+							{/* </HandleHover> */}
 					</div>
+
+					{
+						{isHovering} &&
+						<div className="hover-div-2">
+							Hovering right meow! 🐱
+						</div>
+					}
+
 				</div>
 				<Counter score = {score} 
 									index = {index}

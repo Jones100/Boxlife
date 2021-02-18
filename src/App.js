@@ -3,6 +3,7 @@ import Header from "./Header";
 import Player from "./Player";
 import Counter from "./Counter";
 import AddPlayerForm from "./AddPlayerForm";
+// import HandleHover from "./HandleHover";
 import "./App.css";
 
 class App extends Component {
@@ -27,25 +28,29 @@ class App extends Component {
 						name: "Mike Tyson",
 						id: 1,
 						score: 0,
-						hoverMessage: "Heyyy"
+						isHovering: false,
+						// hoverMessage: "Heyyy"
 					},
 					{
 						name: "Evander Holyfield",
 						id: 2,
 						score: 0,
-						hoverMessage: "Heyyy"
+						isHovering: false,
+						// hoverMessage: "Heyyy"
 					},
 					{
 						name: "Ray Robinson",
 						id: 3,
 						score: 0,
-						hoverMessage: "Heyyy"
+						isHovering: false,
+						// hoverMessage: "Heyyy"
 					},
 					{
 						name: "Genady Golovkin",
 						id: 4,
 						score: 0,
-						hoverMessage: "Heyyy"
+						isHovering: false,
+						// hoverMessage: "Heyyy"
 					}
 				],
 			}
@@ -88,6 +93,16 @@ class App extends Component {
 				});
 			}
 
+			setStateHover = () => {
+				this.setState(this.toggleHoverState);
+			}
+
+			toggleHoverState = (state) => {
+				return {
+					isHovering: !state.isHovering,
+				};
+			}
+
 			render() {
 				return (
 					
@@ -111,6 +126,7 @@ class App extends Component {
 													key = {player.id.toString()}
 													changeScore = {this.handleScoreChange}
 													removePlayer = {this.handleRemovePlayer}
+													hover = {this.setStateHover}
 											/>
 										)}
 										<AddPlayerForm addPlayer = {this.handleAddPlayer} />

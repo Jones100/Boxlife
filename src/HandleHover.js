@@ -5,22 +5,22 @@ export class HandleHover extends Component {
 		isHovering: false,
 	};
 
-	SetStateHover = () => {
-		this.setState(this.toggleHoverState);
-	}
+	// setStateHover = () => {
+	// 	this.setState(this.toggleHoverState);
+	// }
 
-	toggleHoverState = (state) => {
-		return {
-			isHovering: !state.isHovering,
-		};
-	}
+	// toggleHoverState = (state) => {
+	// 	return {
+	// 		isHovering: !state.isHovering,
+	// 	};
+	// }
 
 	render() {
 		return (
 			<div>
 				<div className = "hover-div"
-							onMouseEnter={this.SetStateHover}
-							onMouseLeave={this.SetStateHover}
+							onMouseEnter={this.setStateHover}
+							onMouseLeave={this.setStateHover}
 				>
 					Hover Me
 				</div>
