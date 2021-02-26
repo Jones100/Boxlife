@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
     this.state = {};
   };
-  
+
   render() {
 
 		// 			<div className = "player-profile-container">
@@ -20,7 +20,7 @@ class App extends Component {
 		// 				<div className = "player-personality"> Personality : </div>
 		// 			</div>
 
-		
+
     class App extends React.Component {
 			state = {
 				players: [
@@ -42,7 +42,7 @@ class App extends Component {
 						name: "Ray Robinson",
 						id: 3,
 						score: 0,
-						isHovering: false,
+						isHovering: true,
 						// hoverMessage: "Heyyy"
 					},
 					{
@@ -55,7 +55,7 @@ class App extends Component {
 				],
 			}
 
-			// The below parameter 'change' signifies the amount the score changes by. 
+			// The below parameter 'change' signifies the amount the score changes by.
 			// This can be named anything
 
 			// player id counter below
@@ -64,7 +64,7 @@ class App extends Component {
 
 			handleScoreChange = (index, change) => {
 				this.setState(prevState => ({
-					score: prevState.players[index].score += change 
+					score: prevState.players[index].score += change
 				}));
 				// console.log(change)
 			}
@@ -78,11 +78,11 @@ class App extends Component {
 							{
 								name : name,
 								score : 0,
-								id: this.prevPlayerId += 1 
+								id: this.prevPlayerId += 1
 							}
 						]
 					};
-				});	
+				});
 			}
 
 			handleRemovePlayer = (id) => {
@@ -105,14 +105,14 @@ class App extends Component {
 
 			render() {
 				return (
-					
+
 					<div className = "main-app-container">
-						
+
 						<div className = "scoreboard-container">
 							<div className = "scoreboard-border">
-								
+
 								<div className = "header-container">
-									<Header players = {this.state.players} 
+									<Header players = {this.state.players}
 										/>
 								</div>
 
@@ -126,7 +126,8 @@ class App extends Component {
 													key = {player.id.toString()}
 													changeScore = {this.handleScoreChange}
 													removePlayer = {this.handleRemovePlayer}
-													hover = {this.setStateHover}
+													// hover = {this.setStateHover}
+													isHovering = {player.isHovering}
 											/>
 										)}
 										<AddPlayerForm addPlayer = {this.handleAddPlayer} />
@@ -138,7 +139,7 @@ class App extends Component {
 				);
 			}
     }
-    
+
     return (
       <App />
     );

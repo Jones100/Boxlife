@@ -14,14 +14,14 @@ class Player extends PureComponent {
 		changeScore: PropTypes.func.isRequired,
 		removePlayer: PropTypes.func.isRequired,
 		hover: PropTypes.func.isRequired,
-		// isHovering: PropTypes.bool.isRequired
+		isHovering: PropTypes.bool.isRequired
 	};
 
 	render() {
 		const {
-			name, 
+			name,
 			id,
-			index, 
+			index,
 			score,
 			changeScore,
 			hover,
@@ -31,7 +31,7 @@ class Player extends PureComponent {
 		} = this.props;
 
 		// console.log(name + ' rendered');
-		
+
 		return (
 			<div className="player">
 				<div className="player-button-container">
@@ -50,14 +50,14 @@ class Player extends PureComponent {
 					</div>
 
 					{
-						{isHovering} &&
+						isHovering &&
 						<div className="hover-div-2">
 							Hovering right meow! 🐱
 						</div>
 					}
 
 				</div>
-				<Counter score = {score} 
+				<Counter score = {score}
 									index = {index}
 									changeScore = {changeScore}
 				/>
