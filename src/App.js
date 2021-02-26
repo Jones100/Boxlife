@@ -63,10 +63,16 @@ class App extends Component {
 			prevPlayerId = 4;
 
 			handleScoreChange = (index, change) => {
-				this.setState(prevState => ({
-					score: prevState.players[index].score += change
-				}));
-				// console.log(change)
+				this.setState(prevState => {
+					return {
+						players: prevState.players.map((player, idx) => {
+							return {
+								...player,
+								score: idx == index ? (player.score + change) : player.score,
+							};
+						})
+					};
+				});
 			}
 
 			handleAddPlayer = (name) => {
