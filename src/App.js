@@ -132,7 +132,7 @@ class App extends Component {
 													key = {player.id.toString()}
 													changeScore = {this.handleScoreChange}
 													removePlayer = {this.handleRemovePlayer}
-													// hover = {this.setStateHover}
+													hover = {this.setStateHover}
 													isHovering = {player.isHovering}
 											/>
 										)}
